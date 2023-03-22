@@ -5,24 +5,35 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 public class Ball extends GameObject{
-
+	private final static int STARTING_X_VELOCITY = 1;
+	private final static int STARTING_Y_VELOCITY = 5;
+	
+	private final static int BALL_SIZE = 30;
+	
+	private int xPos;
+	private int yPos;
+	private int xVel;
+	private int yVel;
+	
 	public Ball(int x, int y, int objType) {
 		super(x, y, objType);
-		super.setHitbox(20, 20);
+		super.setHitbox(x, y);
+		xPos = x;
+		yPos = y;
+		xVel = STARTING_X_VELOCITY;
+		yVel = STARTING_Y_VELOCITY;
 	}
 
 	@Override
 	public void render(Graphics2D g2d) {
-		//Graphics2D g2d = (Graphics2D) g;
-		Rectangle rect = new Rectangle(50, -50, 1000, 100); 
 		g2d.setColor(Color.BLACK);
-		g2d.fill(rect);
-		g2d.draw(rect);
+		g2d.fillArc(xPos, 140, BALL_SIZE, BALL_SIZE, 0, 360);
+//		System.out.println(xPos);
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		xPos = xPos + xVel;
 		
 	}
 }

@@ -6,6 +6,7 @@ import java.awt.geom.Rectangle2D;
 import peggle.view.Game;
 
 public abstract class GameObject {
+
 	private int x;
 	private int y;
 	private int objType;

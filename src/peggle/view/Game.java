@@ -16,6 +16,7 @@ public class Game implements Runnable{
 	public final static float SCALE = 2f;
 	
 	private GamePanel gamePanel;
+	private GameWindow gameWindow;
 	private Thread gameThread;
 	private GameStateManager gameStateManager;
 //	private BufferedImage img;
@@ -25,6 +26,7 @@ public class Game implements Runnable{
 		
 		gameStateManager = new GameStateManager();
 		gamePanel = new GamePanel(this);
+		gameWindow = new GameWindow(gamePanel);
 		gamePanel.requestFocusInWindow();
 		
 		startGame();
@@ -69,7 +71,6 @@ public class Game implements Runnable{
 			
 			if(deltaF >= 1) {
 				gamePanel.repaint();
-//				render(g2d);
 				frames++;
 				deltaF--;
 			}
@@ -88,13 +89,7 @@ public class Game implements Runnable{
 		gameStateManager.render((Graphics2D) g);
 	}
 	
-//	private void render(Graphics2D g2d) {
-//		gameStateManager.render(g2d);
-//	}
-	
-	
 	private void update() {
-		// TODO Auto-generated method stub
-		
+		gameStateManager.update();
 	}
 }

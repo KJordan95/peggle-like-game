@@ -6,6 +6,7 @@ import java.util.List;
 
 public class GameStateManager {
 	public final static int PLAY = 0;
+
 	private List<GameState> states;
 	private int currentState;
 	
