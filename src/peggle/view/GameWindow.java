@@ -8,9 +8,7 @@ public class GameWindow extends JFrame{
 
 	private String title;
 	GamePanel gamePanel;
-	
-	private static GameWindow window = null;
-	
+		
 	GameWindow(GamePanel gamePanel) {
 		this.gamePanel = gamePanel;
 		this.title = "Peggle Like Game";
@@ -22,12 +20,4 @@ public class GameWindow extends JFrame{
 		pack();
 		setVisible(true);
 	}
-	
-//	public static Window get() {
-//		if(Window.window == null) {
-//			Window.window = new Window(gamePanel);
-//		}
-//		
-//		return Window.window;
-//	}
 }

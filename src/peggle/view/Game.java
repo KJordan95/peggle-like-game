@@ -13,7 +13,7 @@ public class Game implements Runnable{
 	private final int FPS = 120;
 	private final int UPS = 200;
 	
-	public final static float SCALE = 2f;
+	public final static float SCALE = 1f;
 	
 	private GamePanel gamePanel;
 	private GameWindow gameWindow;

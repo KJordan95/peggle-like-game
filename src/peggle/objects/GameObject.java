@@ -20,8 +20,12 @@ public abstract class GameObject {
 		this.objType = objType;
 	}
 	
-	public void setHitbox(int width, int height) {
+	public void setHitbox(int x, int y, int width, int height) {
 		hitbox = new Rectangle2D.Float(x, y, (int) (width * Game.SCALE), (int) (height * Game.SCALE));
+	}
+	
+	public Rectangle2D.Float getHitBox(){
+		return hitbox;
 	}
 	
 	public abstract void update();
