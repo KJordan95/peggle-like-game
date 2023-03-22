@@ -6,4 +6,5 @@
  *
  */
 module PeggleGame {
+	requires java.desktop;
 }
