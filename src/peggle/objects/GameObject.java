@@ -11,8 +11,9 @@ public abstract class GameObject {
 	private int y;
 	private int objType;
 	private Rectangle2D.Float hitbox;
-	private int xOffset;
-	private int yOffset;
+
+	public abstract void update();
+	public abstract void render(Graphics2D g2d);
 	
 	public GameObject(int x, int y, int objType) {
 		this.x = x;
@@ -28,6 +29,27 @@ public abstract class GameObject {
 		return hitbox;
 	}
 	
-	public abstract void update();
-	public abstract void render(Graphics2D g2d);
+	public int getXPos() {
+		return x;
+	}
+
+	public void setXPos(int x) {
+		this.x = x;
+	}
+
+	public int getYPos() {
+		return y;
+	}
+
+	public void setYPos(int y) {
+		this.y = y;
+	}
+
+	public int getObjType() {
+		return objType;
+	}
+
+	public void setObjType(int objType) {
+		this.objType = objType;
+	}
 }

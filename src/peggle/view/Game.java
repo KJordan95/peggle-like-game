@@ -16,7 +16,6 @@ public class Game implements Runnable{
 	public final static float SCALE = 1f;
 	
 	private GamePanel gamePanel;
-	private GameWindow gameWindow;
 	private Thread gameThread;
 	private GameStateManager gameStateManager;
 //	private BufferedImage img;
@@ -26,7 +25,7 @@ public class Game implements Runnable{
 		
 		gameStateManager = new GameStateManager();
 		gamePanel = new GamePanel(this);
-		gameWindow = new GameWindow(gamePanel);
+		new GameWindow(gamePanel);
 		gamePanel.requestFocusInWindow();
 		
 		startGame();
